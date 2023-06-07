@@ -1,5 +1,6 @@
 import re
 import os.path
+import pickle
 
 class Contact:
     def __init__(self, name, email, phone):
