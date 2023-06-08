@@ -21,12 +21,32 @@ class User:
         print("Contact added successfully!") 
 
     def authenticate():
-        # Implementation for authenticating a user
-        pass
+        username = input("Enter username: ")
+        
+        for contact in contacts2 :
+            while not(contact.username == username) :
+                username = input("Username is not correct , Enter username: ")
+            password = input("Enter password : ")
+            while not(contact.password == password ):
+                password = input("Password is not correct , Enter password : ")    
+            print("welcome")
+            
 
     def change_password():
-        # Implementation for changing a user's password
-        pass
+        # Function to edit an existing contact
+        username = input("Enter the username of the user to edit: ")
+        for contact in contacts2:
+            if contact.username == username:
+                password = input("Enter the new password of the user: ")
+                while not re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})", password):
+                    password = input("your password is weak: ")
+                password2 = input("Please re-enter your password : ")
+                while not (password == password2):
+                    password2 = input("Invalid phone number. Please re-enter your password : ")
+                contact.password = password
+                print("Contact updated successfully!")
+                return
+        print("user not found.")
 
 
 
