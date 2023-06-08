@@ -30,6 +30,7 @@ class User:
             while not(contact.password == password ):
                 password = input("Password is not correct , Enter password : ")    
             print("welcome")
+            return True
             
 
     def change_password():
